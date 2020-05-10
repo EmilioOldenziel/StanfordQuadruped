@@ -13,12 +13,8 @@ sudo bash install.sh
 cd ..
 sudo systemctl enable joystick
 
-wget https://github.com/joan2937/pigpio/archive/v76.zip
-unzip v74.zip
-cd pigpio-76
-make
-sudo make install
-cd ..
+pip install git+https://github.com/joan2937/pigpio/archive/v76.zip
+
 
 cd StanfordQuadruped
 sudo ln -s $(realpath .)/robot.service /etc/systemd/system/
