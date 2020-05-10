@@ -53,7 +53,9 @@ from Controller import *
 
 
 def test_inverse_kinematics_linkage():
-    print("\n-------------- Testing Five-bar Linkage Inverse Kinematics -----------")
+    print("""\n
+    -------------- Testing Five-bar Linkage Inverse Kinematics -----------"""
+    )
     config = PupperConfig()
     print("\nTesting Inverse Kinematics")
 

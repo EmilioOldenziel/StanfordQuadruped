@@ -8,6 +8,7 @@ from pupper.HardwareInterface import HardwareInterface
 from pupper.Config import Configuration
 from pupper.Kinematics import four_legs_inverse_kinematics
 
+
 def main(use_imu=False):
     """Main program
     """
@@ -57,7 +58,8 @@ def main(use_imu=False):
                 continue
             last_loop = time.time()
 
-            # Parse the udp joystick commands and then update the robot controller's parameters
+            # Parse the udp joystick commands and then update the robot
+            # controller's parameters
             command = joystick_interface.get_command(state)
             if command.activate_event == 1:
                 print("Deactivating Robot")
