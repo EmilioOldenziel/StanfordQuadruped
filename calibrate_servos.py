@@ -1,6 +1,7 @@
 import pigpio
 from pupper.HardwareInterface import HardwareInterface
 from pupper.Config import PWMParams, ServoParams
+from src.Utilities import degrees_to_radians
 import numpy as np
 
 
@@ -18,23 +19,6 @@ def get_motor_name(i, j):
 def get_motor_setpoint(i, j):
     data = np.array([[0, 0, 0, 0], [45, 45, 45, 45], [45, 45, 45, 45]])
     return data[i, j]
-
-
-def degrees_to_radians(input_array):
-    """
-    Converts degrees to radians.
-
-    Parameters
-    ----------
-    input_array :  Numpy array or float
-        Degrees
-
-    Returns
-    -------
-    Numpy array or float
-        Radians
-    """
-    return np.pi / 180.0 * input_array
 
 
 def step_until(hardware_interface, axis, leg, set_point):
@@ -156,7 +140,8 @@ def calibrate_angle_offset(hardware_interface):
 
 
 def main():
-    """Main program
+    """
+        Main program
     """
     hardware_interface = HardwareInterface()
 
