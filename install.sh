@@ -1,7 +1,5 @@
-yes | sudo apt-get install libatlas-base-dev
-yes | pip3 install numpy transforms3d pigpio pyserial
-yes | pip install numpy transforms3d pigpio pyserial
-yes | sudo pip install numpy transforms3d pigpio pyserial
+sudo apt-get -y install libatlas-base-dev
+pip install -r requirements.txt --user
 
 cd ..
 git clone https://github.com/stanfordroboticsclub/PupperCommand.git
@@ -15,9 +13,9 @@ sudo bash install.sh
 cd ..
 sudo systemctl enable joystick
 
-wget https://github.com/joan2937/pigpio/archive/v74.zip
+wget https://github.com/joan2937/pigpio/archive/v76.zip
 unzip v74.zip
-cd pigpio-74
+cd pigpio-76
 make
 sudo make install
 cd ..
